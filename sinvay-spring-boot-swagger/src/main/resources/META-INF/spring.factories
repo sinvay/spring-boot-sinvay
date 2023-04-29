@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.sinvay.boot.swagger.SwaggerConfig,\
+  com.sinvay.boot.swagger.SwaggerProperties

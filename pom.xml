@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+
+    <name>spring-boot-sinvay</name>
+    <description>Java basic develop kits</description>
+    <url>https://sinvay.com/</url>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>pizzalord</name>
+            <email>pizzalord@sinvay.com</email>
+        </developer>
+    </developers>
+    <scm>
+        <url>https://github.com/sinvay/spring-boot-sinvay.git</url>
+        <connection>scm:git:https://github.com/sinvay/spring-boot-sinvay.git</connection>
+        <developerConnection>scm:git:https://github.com/sinvay/spring-boot-sinvay.git</developerConnection>
+    </scm>
+
+    <modules>
+        <module>sinvay-spring-boot-web</module>
+        <module>sinvay-spring-boot-utils</module>
+        <module>sinvay-spring-boot-swagger</module>
+        <module>sinvay-spring-boot-response</module>
+        <module>sinvay-spring-boot-starter</module>
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.5.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.sinvay</groupId>
+    <artifactId>spring-boot-sinvay</artifactId>
+    <version>0.0.1</version>
+
+    <properties>
+        <!-- sinvay springboot 版本 -->
+        <springboot-sinvay.version>0.0.1</springboot-sinvay.version>
+        <!-- 基础依赖版本 -->
+        <oakenshield.version>0.0.9</oakenshield.version>
+        <!-- 第三方库依赖版本 -->
+        <wizard.version>0.0.9</wizard.version>
+        <!-- 字符集 -->
+        <encoding>UTF-8</encoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- java version -->
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!-- google guava version -->
+        <guava.version>27.0.1-jre</guava.version>
+        <!-- log version -->
+        <log4j2.version>2.17.0</log4j2.version>
+        <!-- spring cloud version -->
+        <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
+        <!-- alibaba cloud version -->
+        <alibaba-cloud.version>2.2.5.RELEASE</alibaba-cloud.version>
+        <!-- nacos client version -->
+        <alibaba-nacos.version>2.2.1.RELEASE</alibaba-nacos.version>
+        <!-- sentinel client version -->
+        <alibaba-sentinel.version>1.8.2</alibaba-sentinel.version>
+        <!-- swagger api文档版本 -->
+        <swagger.version>2.9.2</swagger.version>
+        <!-- mybatis version -->
+        <mybatis.version>2.0.0</mybatis.version>
+        <!-- forest version -->
+        <forest.version>1.5.16</forest.version>
+    </properties>
+
+    <dependencies>
+        <!-- log -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <!-- test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Sugar -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.1</version>
+        </dependency>
+        <!-- oak -->
+        <dependency>
+            <groupId>com.sinvay</groupId>
+            <artifactId>oakenshield-date</artifactId>
+            <version>${oakenshield.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sinvay</groupId>
+            <artifactId>oakenshield-math</artifactId>
+            <version>${oakenshield.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sinvay</groupId>
+            <artifactId>oakenshield-random</artifactId>
+            <version>${oakenshield.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sinvay</groupId>
+            <artifactId>oakenshield-io-core</artifactId>
+            <version>${oakenshield.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sinvay</groupId>
+            <artifactId>oakenshield-security</artifactId>
+            <version>${oakenshield.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sinvay</groupId>
+            <artifactId>oakenshield-sql</artifactId>
+            <version>${oakenshield.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sinvay</groupId>
+            <artifactId>oakenshield-datastructure</artifactId>
+            <version>${oakenshield.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sinvay</groupId>
+            <artifactId>oakenshield-script</artifactId>
+            <version>${oakenshield.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sinvay</groupId>
+            <artifactId>oakenshield-sugar</artifactId>
+            <version>${oakenshield.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sinvay</groupId>
+            <artifactId>oakenshield-json</artifactId>
+            <version>${oakenshield.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sinvay</groupId>
+            <artifactId>oakenshield-design</artifactId>
+            <version>${oakenshield.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sinvay</groupId>
+            <artifactId>oakenshield-http</artifactId>
+            <version>${oakenshield.version}</version>
+        </dependency>
+        <!-- springboot注释处理器,生成配置元数据 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.sinvay</groupId>
+                <artifactId>sinvay-spring-boot-response</artifactId>
+                <version>${springboot-sinvay.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sinvay</groupId>
+                <artifactId>sinvay-spring-boot-starter</artifactId>
+                <version>${springboot-sinvay.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sinvay</groupId>
+                <artifactId>sinvay-spring-boot-swagger</artifactId>
+                <version>${springboot-sinvay.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sinvay</groupId>
+                <artifactId>sinvay-spring-boot-utils</artifactId>
+                <version>${springboot-sinvay.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sinvay</groupId>
+                <artifactId>sinvay-spring-boot-web</artifactId>
+                <version>${springboot-sinvay.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <repositories>
+        <!-- Aliyun repository -->
+        <repository>
+            <id>nexus-aliyun</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+        <!-- Maven central repository -->
+        <repository>
+            <id>nexus-center</id>
+            <url>http://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
+    <profiles>
+        <profile>
+            <id>sonatype</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok-maven-plugin</artifactId>
+                        <version>1.18.10.0</version>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>2.22.2</version>
+                        <configuration>
+                            <!--                    <skipTests>true</skipTests>-->
+                            <forkMode>once</forkMode>
+                            <argLine>-Dfile.encoding=UTF-8</argLine>
+                        </configuration>
+                    </plugin>
+                    <!-- doc plugin,Maven API文档生成插件 -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!-- resources plugin,Maven 资源插件 -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!-- compiler plugin,Maven 编译插件 -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.3</version>
+                        <configuration>
+                            <source>${java.version}</source>
+                            <target>${java.version}</target>
+                            <showWarnings>true</showWarnings>
+                        </configuration>
+                    </plugin>
+                    <!-- gpg plugin,用于签名认证 -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!--staging puglin,用于自动执行发布阶段(免手动)-->
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6.7</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>sonatype</serverId>
+                            <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
+                    <!-- release plugin,用于发布到release仓库部署插件 -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-release-plugin</artifactId>
+                        <version>2.4.2</version>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>sonatype</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>sonatype</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+</project>
