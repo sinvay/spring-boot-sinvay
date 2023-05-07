@@ -9,12 +9,10 @@
         <version>0.0.7</version>
     </parent>
 
-    <artifactId>sinvay-spring-boot-utils</artifactId>
+    <artifactId>sinvay-spring-boot-persistence</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>sinvay-spring-boot-persistence-mybatis</module>
+    </modules>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.sinvay</groupId>
-            <artifactId>sinvay-spring-boot-web</artifactId>
-        </dependency>
-    </dependencies>
 </project>

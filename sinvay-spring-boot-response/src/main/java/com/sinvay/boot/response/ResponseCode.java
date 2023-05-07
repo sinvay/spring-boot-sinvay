@@ -11,20 +11,14 @@ import lombok.Getter;
  * @since 1.0
  */
 public enum ResponseCode {
-    SUCCESS(0, "操作成功"),
-    FAILED(-1, "操作失败"),
-    WARNING(-2, "告警"),
-    ILLEGAL_REQ(1, "请求非法"),
-    ILLEGAL_RESP(2, "返回非法"),
-    CAPTCHA_MUST(100, "需要验证码"),
-    WEEK_PASSWORD(101, "密码强度低"),
-    EMAIL_MUST(102, "需要强制绑定邮箱"),
+    SUCCESS(200, "操作成功"),
+    ILLEGAL_REQ(400, "参数错误或请求非法"),
     UNAUTHORIZED(401, "授权无效或过期"),
     FORBIDDEN(403, "资源访问受限"),
-    WECHAT_UNBIND(410, "微信未绑定"),
     INTERNAL_SERVER_ERROR(500, "服务内部错误"),
     SERVICE_UNAVAILABLE(503, "服务不可用"),
-    FAILED_REFRESH_TOKEN(1401, "授权刷新无效,请重新登录");
+    UNKNOWN_ERROR(9001, "未知错误"),
+    ;
 
     @Getter
     private int code;

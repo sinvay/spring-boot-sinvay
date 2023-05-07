@@ -25,19 +25,12 @@ import javax.validation.constraints.NotNull;
 public class Response<T> {
     @ApiModelProperty(
             value = "返回代码:\n" +
-                    "   0: 操作成功\n" +
-                    "  -1: 操作失败\n" +
-                    "  -2: 告警\n" +
-                    "   1: 请求非法\n" +
-                    "   2: 返回非法\n" +
-                    " 100: 需要验证码\n" +
-                    " 101: 密码强度低\n" +
-                    " 102: 需要强制绑定邮箱\n" +
+                    " 200: 操作成功\n" +
+                    " 400: 参数错误或请求非法\n" +
                     " 401: 授权无效或过期\n" +
                     " 403: 资源访问受限\n" +
                     " 500: 服务内部错误\n" +
                     " 503: 服务不可用\n" +
-                    "1401: 授权刷新无效,请重新登录\n" +
                     "",
             required = true)
     @NotNull(message = "不能为空")
@@ -92,7 +85,7 @@ public class Response<T> {
      * @return
      */
     public static Response fail() {
-        return failWith(ResponseCode.FAILED);
+        return failWith(ResponseCode.UNKNOWN_ERROR);
     }
 
     /**
@@ -103,7 +96,7 @@ public class Response<T> {
      */
     public static Response fail(String message) {
         return Response.builder()
-                .code(ResponseCode.FAILED.getCode())
+                .code(ResponseCode.UNKNOWN_ERROR.getCode())
                 .message(message)
                 .build();
     }

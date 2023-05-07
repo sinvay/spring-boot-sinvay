@@ -9,23 +9,12 @@
         <version>0.0.7</version>
     </parent>
 
-    <artifactId>sinvay-spring-boot-response</artifactId>
+    <artifactId>sinvay-spring-boot-authority</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>com.sinvay</groupId>
-            <artifactId>sinvay-spring-boot-web</artifactId>
-        </dependency>
-        <!-- 生成swagger文档 -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>${swagger.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sinvay</groupId>
-            <artifactId>oakenshield-datastructure</artifactId>
-            <version>${oakenshield.version}</version>
+            <artifactId>sinvay-spring-boot-utils</artifactId>
         </dependency>
     </dependencies>
 </project>
