@@ -34,7 +34,8 @@ stop() {
   echo "[stop] - begin: $SERVICE_NAME"
   ##杀死进程id即edu-service-user.pid
   #kill `cat $SERVICE_DIR/$PID`
-  P_ID=$(ps x | grep $SERVICE_NAME.jar | grep -v grep | awk '{print $1}')
+#  P_ID=$(ps x | grep $SERVICE_NAME.jar | grep -v grep | awk '{print $1}')
+  P_ID=$(ps x | grep $ENV\ $SERVICE_NAME.jar | grep -v grep | awk '{print $1}')
   echo "Deploy >>> stop -> $SERVICE_NAME进程为:$P_ID"
 
   #等待5s
